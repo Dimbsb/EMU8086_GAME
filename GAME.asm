@@ -3,7 +3,7 @@
 ; Also, the color of the rectangle wiil be changed randomly for 1 sec 
 ; Then it will turn black and another one (maybe the same) will be selected with random color 
 ; If the user presses 'q' the execution will stop (=exit) 
-; If he presses 'spacebar' there will be a pause until he presses 'spacebar' again
+; If the user presses 'spacebar' there will be a pause until he presses 'spacebar' again
 ; After compiling the code an .exe file is created which is about to be executed in dosbox which will run the code at full speed
 ; In this way we avoid slowness of emu8086
 
@@ -62,7 +62,7 @@ CREATEBORDERS PROC
     MOV BX, 0A000h         ; Set ES to point to the video memory segment
     MOV ES, BX  
              
-    ;Horizontal borders (320 pixels width)
+;Horizontal borders (320 pixels width)
     MOV CX, 320
     MOV DI, 0
 HORIZONTAL:           
@@ -146,8 +146,7 @@ BLINK_LOOP:
     CMP AL, ' '    ; Toggle pause on spacebar
     JNE BLINK_LOOP
     
-; Toggle the pause state
-    XOR WORD PTR [PAUSED], 1
+    XOR WORD PTR [PAUSED], 1    ; Toggle the pause state
 
 ; Pause loop
 PAUSE_LOOP:
@@ -158,9 +157,8 @@ PAUSE_LOOP:
     INT 16h
     CMP AL, ' '    ; Unpause on spacebar
     JNE PAUSE_LOOP
-
-    ; Toggle the pause state back and resume
-    XOR WORD PTR [PAUSED], 1
+    
+    XOR WORD PTR [PAUSED], 1    ; Toggle the pause state back and resume
 
     JMP BLINK_LOOP
 
