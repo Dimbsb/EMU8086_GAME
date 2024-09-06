@@ -36,8 +36,3 @@ This program requires an x86 emulator or real hardware capable of running 16-bit
 To assemble and link the program using `NASM` and `TASM`:
 ```bash
 nasm -f bin -o program.com program.asm
-
-##License
-
-This program is licensed under the UOWM(University of Western Macedonia) License, as part of Computer Architecture course.
-
