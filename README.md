@@ -33,6 +33,4 @@ This program requires an x86 emulator or real hardware capable of running 16-bit
 ## Compilation and Execution
 
 ### Assemble and Link
-To assemble and link the program using `NASM` and `TASM`:
-```bash
-nasm -f bin -o program.com program.asm
+To assemble this program use EMU8086.
